@@ -3,6 +3,10 @@ import Footer from "@/components/Footer";
 import { FileText, CheckCircle, FileCheck, DollarSign, Shield, Lock, Building2 } from "lucide-react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
+import regionsLogo from "@/assets/regions-logo.png";
+import navyFederalLogo from "@/assets/navy-federal-logo.png";
+import bankOfAmericaLogo from "@/assets/bank-of-america-logo.png";
+import chaseLogo from "@/assets/chase-logo.png";
 
 const steps = [
   {
@@ -124,21 +128,17 @@ const HowItWorks = () => {
                 <div className="pt-6 border-t border-border">
                   <p className="text-sm text-muted-foreground mb-4 text-center">Trusted Banking Partners</p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
-                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-trust-primary transition-colors w-full">
-                      <Building2 className="w-12 h-12 text-muted-foreground" />
-                      <span className="text-xs font-mono font-semibold">CHASE</span>
+                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-accent transition-colors w-full h-24">
+                      <img src={chaseLogo} alt="Chase Bank" className="h-12 w-auto object-contain" />
                     </div>
-                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-trust-primary transition-colors w-full">
-                      <Building2 className="w-12 h-12 text-muted-foreground" />
-                      <span className="text-xs font-mono font-semibold">Bank of America</span>
+                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-accent transition-colors w-full h-24">
+                      <img src={bankOfAmericaLogo} alt="Bank of America" className="h-12 w-auto object-contain" />
                     </div>
-                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-trust-primary transition-colors w-full">
-                      <Building2 className="w-12 h-12 text-muted-foreground" />
-                      <span className="text-xs font-mono font-semibold">Navy Federal</span>
+                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-accent transition-colors w-full h-24">
+                      <img src={navyFederalLogo} alt="Navy Federal Credit Union" className="h-12 w-auto object-contain" />
                     </div>
-                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-trust-primary transition-colors w-full">
-                      <Building2 className="w-12 h-12 text-muted-foreground" />
-                      <span className="text-xs font-mono font-semibold">Regions</span>
+                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-accent transition-colors w-full h-24">
+                      <img src={regionsLogo} alt="Regions Bank" className="h-12 w-auto object-contain" />
                     </div>
                   </div>
                 </div>
