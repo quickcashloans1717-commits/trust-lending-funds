@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ProgressIndicator from "@/components/ProgressIndicator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useToast } from "@/hooks/use-toast";
 import { useLoanApplicationForm, type LoanApplicationData } from "@/hooks/use-loan-application-form";
 import { submitLoanApplication } from "@/lib/api";
+import { Shield, Lock } from "lucide-react";
 
 const loanDetails = {
   personal: {
@@ -346,21 +348,36 @@ const ApplyLoan = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <section className="container mx-auto px-4 py-20">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-mono font-bold mb-4">{loan.title}</h1>
-            <p className="text-lg text-muted-foreground mb-2">{loan.description}</p>
-            <p className="text-accent font-mono font-bold mb-8">Loan Range: {loan.range}</p>
+        <section className="container mx-auto px-4 py-12 md:py-20">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl md:text-5xl font-bold mb-4">{loan.title}</h1>
+              <p className="text-lg text-muted-foreground mb-2">{loan.description}</p>
+              <p className="text-accent font-semibold">Loan Range: {loan.range}</p>
+            </div>
+
+            <ProgressIndicator 
+              currentStep={currentStep} 
+              totalSteps={3}
+              steps={['Loan Details', 'Personal Info', 'Bank Details']}
+            />
 
             {hasSubmitted && (
-              <div className="p-6 border-2 border-accent bg-accent/5 mb-6">
-                <p className="text-base text-muted-foreground">
-                  Thank you for your application. Our team has received your information and will reach out with next steps soon.
+              <div className="p-6 border-2 border-success bg-success/5 rounded-lg mb-8">
+                <p className="text-base text-foreground">
+                  ✓ Thank you for your application. Our team has received your information and will reach out with next steps soon.
                 </p>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6" aria-live="polite">
+            <div className="bg-card border border-border rounded-lg p-6 md:p-8 shadow-lg">
+              <div className="flex items-center justify-center gap-2 mb-6 p-4 bg-muted/50 rounded-lg">
+                <Shield className="w-5 h-5 text-accent" />
+                <span className="text-sm font-medium">Safe & Secure - Your information is protected with bank-level encryption</span>
+                <Lock className="w-4 h-4 text-accent" />
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-6" aria-live="polite">
               {currentStep === 1 && (
                 <div className="space-y-6" role="group" aria-labelledby="loan-details-heading">
                   <h2 id="loan-details-heading" className="text-2xl font-mono font-bold">Loan Details</h2>
@@ -789,6 +806,7 @@ const ApplyLoan = () => {
                 </div>
               )}
             </form>
+            </div>
 
             {hasSubmitted && (
               <div className="mt-6 flex justify-end">

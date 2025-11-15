@@ -20,7 +20,7 @@ const ProcessSteps = () => {
   return (
     <section className="container mx-auto px-4 py-20 bg-muted/30">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-mono font-bold mb-16 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
           Easy 3-step funding solution
         </h2>
         
@@ -28,13 +28,13 @@ const ProcessSteps = () => {
           {steps.map((step, index) => (
             <div 
               key={index} 
-              className="flex flex-col md:flex-row gap-6 items-start p-8 border-2 border-border bg-card hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 group"
+              className="flex flex-col md:flex-row gap-6 items-start p-8 border-2 border-border bg-card hover:border-accent transition-all duration-300 hover:shadow-lg rounded-lg group"
             >
-              <div className="text-7xl font-mono font-bold text-accent/20 group-hover:text-accent/40 transition-colors duration-300">
+              <div className="text-7xl font-bold text-accent/20 group-hover:text-accent/40 transition-colors duration-300">
                 {step.number}
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl font-mono font-bold mb-3 group-hover:text-accent transition-colors duration-300">{step.title}</h3>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors duration-300">{step.title}</h3>
                 <p className="text-muted-foreground text-lg">{step.description}</p>
               </div>
             </div>

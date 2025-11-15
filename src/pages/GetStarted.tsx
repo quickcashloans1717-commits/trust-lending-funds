@@ -36,7 +36,7 @@ const GetStarted = () => {
       <main>
         <section className="container mx-auto px-4 py-20">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-mono font-bold mb-8 text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 text-center">
               Get <span className="text-accent">Started</span>
             </h1>
             
@@ -46,10 +46,10 @@ const GetStarted = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               {loanTypes.map((loan, index) => (
-                <Card key={index} className="border-2 border-border hover:border-accent transition-colors">
+                <Card key={index} className="border-2 border-border hover:border-accent transition-all duration-300 hover:shadow-lg">
                   <CardHeader>
                     <loan.icon className="w-12 h-12 text-accent mb-4" />
-                    <CardTitle className="font-mono text-2xl">{loan.title}</CardTitle>
+                    <CardTitle className="text-2xl font-bold">{loan.title}</CardTitle>
                     <CardDescription className="text-base">
                       {loan.description}
                     </CardDescription>
@@ -64,7 +64,7 @@ const GetStarted = () => {
                       ))}
                     </ul>
                     <Link to={loan.link}>
-                      <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-mono group">
+                      <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-medium group">
                         Apply Now
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                       </Button>
@@ -74,26 +74,26 @@ const GetStarted = () => {
               ))}
             </div>
 
-            <div className="border-2 border-accent bg-accent/5 p-8">
-              <h2 className="text-3xl font-mono font-bold mb-6">What to Expect</h2>
+            <div className="border-2 border-accent bg-accent/5 p-8 rounded-lg">
+              <h2 className="text-3xl font-bold mb-6">What to Expect</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <div className="text-4xl font-mono font-bold text-accent mb-2">01</div>
-                  <h3 className="font-mono font-bold mb-2">Fill Application</h3>
+                  <div className="text-4xl font-bold text-accent mb-2">01</div>
+                  <h3 className="font-bold mb-2">Fill Application</h3>
                   <p className="text-sm text-muted-foreground">
                     Complete our simple online form in minutes
                   </p>
                 </div>
                 <div>
-                  <div className="text-4xl font-mono font-bold text-accent mb-2">02</div>
-                  <h3 className="font-mono font-bold mb-2">Get Decision</h3>
+                  <div className="text-4xl font-bold text-accent mb-2">02</div>
+                  <h3 className="font-bold mb-2">Get Decision</h3>
                   <p className="text-sm text-muted-foreground">
                     Receive approval decision same day
                   </p>
                 </div>
                 <div>
-                  <div className="text-4xl font-mono font-bold text-accent mb-2">03</div>
-                  <h3 className="font-mono font-bold mb-2">Receive Funds</h3>
+                  <div className="text-4xl font-bold text-accent mb-2">03</div>
+                  <h3 className="font-bold mb-2">Receive Funds</h3>
                   <p className="text-sm text-muted-foreground">
                     Sign contract and get funded quickly
                   </p>
