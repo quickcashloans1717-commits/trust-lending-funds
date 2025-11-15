@@ -21,13 +21,13 @@ const About = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
           </div>
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-mono font-bold mb-8">
-              About <span className="text-accent">QuickCashLoans</span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-8">
+              About <span className="text-accent">Trust Lending Funds</span>
             </h1>
             
             <div className="space-y-8 text-lg text-muted-foreground">
               <p>
-                QuickCashLoans is a leading financial services provider dedicated to empowering individuals and businesses with tailored lending solutions. Since our inception, we've been committed to making financing accessible, transparent, and efficient - with trust at the core of everything we do.
+                Trust Lending Funds is a leading financial services provider dedicated to empowering individuals and businesses with tailored lending solutions. Since our inception, we've been committed to making financing accessible, transparent, and efficient - with trust at the core of everything we do.
               </p>
               
               <p>
@@ -36,33 +36,33 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-              <div className="border-2 border-border bg-card/80 backdrop-blur-sm p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 group">
+              <div className="border-2 border-border bg-card/80 backdrop-blur-sm p-8 hover:border-accent transition-all duration-300 hover:shadow-lg group">
                 <Target className="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-2xl font-mono font-bold mb-3">Our Mission</h3>
+                <h3 className="text-2xl font-bold mb-3">Our Mission</h3>
                 <p className="text-muted-foreground">
                   To provide swift, flexible, and reliable financing solutions that help our clients achieve their goals with confidence.
                 </p>
               </div>
 
-              <div className="border-2 border-border bg-card/80 backdrop-blur-sm p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 group">
+              <div className="border-2 border-border bg-card/80 backdrop-blur-sm p-8 hover:border-accent transition-all duration-300 hover:shadow-lg group">
                 <Users className="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-2xl font-mono font-bold mb-3">Our Team</h3>
+                <h3 className="text-2xl font-bold mb-3">Our Team</h3>
                 <p className="text-muted-foreground">
                   A dedicated group of financial experts committed to delivering personalized support and strategic guidance every step of the way.
                 </p>
               </div>
 
-              <div className="border-2 border-border bg-card/80 backdrop-blur-sm p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 group">
+              <div className="border-2 border-border bg-card/80 backdrop-blur-sm p-8 hover:border-accent transition-all duration-300 hover:shadow-lg group">
                 <Award className="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-2xl font-mono font-bold mb-3">Our Values</h3>
+                <h3 className="text-2xl font-bold mb-3">Our Values</h3>
                 <p className="text-muted-foreground">
                   Trust, transparency, and excellence drive everything we do. We believe in building lasting relationships with our clients.
                 </p>
               </div>
 
-              <div className="border-2 border-border bg-card/80 backdrop-blur-sm p-8 hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 group">
+              <div className="border-2 border-border bg-card/80 backdrop-blur-sm p-8 hover:border-accent transition-all duration-300 hover:shadow-lg group">
                 <TrendingUp className="w-12 h-12 text-accent mb-4 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="text-2xl font-mono font-bold mb-3">Our Growth</h3>
+                <h3 className="text-2xl font-bold mb-3">Our Growth</h3>
                 <p className="text-muted-foreground">
                   With thousands of successful funding solutions delivered, we continue to expand our services and impact.
                 </p>
@@ -73,7 +73,7 @@ const About = () => {
 
         <section className="container mx-auto px-4 py-20">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-mono font-bold mb-4 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
               Meet Our Expert Team
             </h2>
             <p className="text-center text-muted-foreground text-lg mb-16 max-w-2xl mx-auto">
@@ -81,7 +81,7 @@ const About = () => {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="border-2 border-border bg-card hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 group overflow-hidden">
+              <div className="border-2 border-border bg-card hover:border-accent transition-all duration-300 hover:shadow-lg group overflow-hidden">
                 <div className="aspect-square overflow-hidden">
                   <img 
                     src={team1} 
@@ -90,7 +90,7 @@ const About = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-mono font-bold mb-1">Robert Chen</h3>
+                  <h3 className="text-xl font-bold mb-1">Robert Chen</h3>
                   <p className="text-accent font-medium mb-3">Chief Executive Officer</p>
                   <p className="text-muted-foreground text-sm">
                     With over 20 years in financial services, Robert leads our vision of making lending accessible and transparent for everyone.
@@ -98,7 +98,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="border-2 border-border bg-card hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 group overflow-hidden">
+              <div className="border-2 border-border bg-card hover:border-accent transition-all duration-300 hover:shadow-lg group overflow-hidden">
                 <div className="aspect-square overflow-hidden">
                   <img 
                     src={team2} 
@@ -107,7 +107,7 @@ const About = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-mono font-bold mb-1">David Martinez</h3>
+                  <h3 className="text-xl font-bold mb-1">David Martinez</h3>
                   <p className="text-accent font-medium mb-3">Head of Lending</p>
                   <p className="text-muted-foreground text-sm">
                     David specializes in crafting customized loan solutions, ensuring each client receives the best possible financing options.
@@ -115,7 +115,7 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="border-2 border-border bg-card hover:border-accent transition-all duration-300 hover:shadow-xl hover:shadow-accent/10 group overflow-hidden">
+              <div className="border-2 border-border bg-card hover:border-accent transition-all duration-300 hover:shadow-lg group overflow-hidden">
                 <div className="aspect-square overflow-hidden">
                   <img 
                     src={team3} 
@@ -124,7 +124,7 @@ const About = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-mono font-bold mb-1">Sarah Williams</h3>
+                  <h3 className="text-xl font-bold mb-1">Sarah Williams</h3>
                   <p className="text-accent font-medium mb-3">Client Relations Director</p>
                   <p className="text-muted-foreground text-sm">
                     Sarah ensures every client receives exceptional service and support throughout their entire lending journey with us.

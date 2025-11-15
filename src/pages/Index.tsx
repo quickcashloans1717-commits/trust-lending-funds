@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import LoanProducts from "@/components/LoanProducts";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ProcessSteps from "@/components/ProcessSteps";
+import LoanCalculator from "@/components/LoanCalculator";
 import Testimonials from "@/components/Testimonials";
 import Support from "@/components/Support";
 import Contact from "@/components/Contact";
@@ -17,6 +18,7 @@ const Index = () => {
         <LoanProducts />
         <WhyChooseUs />
         <ProcessSteps />
+        <LoanCalculator />
         <Testimonials />
         <Support />
         <Contact />

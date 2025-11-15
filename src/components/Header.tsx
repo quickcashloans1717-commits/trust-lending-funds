@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import quickcashLogo from "@/assets/quickcash-logo-new.png";
+import trustLendingLogo from "@/assets/trust-lending-logo.jpg";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,7 +11,7 @@ const Header = () => {
     <header className="border-b border-border bg-background sticky top-0 z-50">
       <nav className="container mx-auto px-4 h-20 flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0">
-          <img src={quickcashLogo} alt="QuickCashLoans - Fast Loans, Built on Trust" className="h-20 w-auto object-contain flex-shrink-0" />
+          <img src={trustLendingLogo} alt="Trust Lending Funds - Secure. Reliable. Funded." className="h-16 w-auto object-contain flex-shrink-0" />
         </Link>
         
         <div className="hidden md:flex items-center gap-6 lg:gap-8">

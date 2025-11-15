@@ -43,6 +43,10 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -50,6 +54,11 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        trust: {
+          blue: "hsl(var(--trust-blue))",
+          green: "hsl(var(--trust-green))",
+          light: "hsl(var(--trust-light))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
