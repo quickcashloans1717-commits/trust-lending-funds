@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center hover:opacity-80 transition-opacity mb-4">
-              <img src={trustLendingLogo} alt="Trust Lending Funds" className="h-24 w-auto object-contain" />
+              <img src={trustLendingLogo} alt="Trust Lending Funds" className="h-28 w-auto object-contain" />
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
               Secure. Reliable. Funded. Your trusted partner for personal, business, and startup loans.
