@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { FileText, CheckCircle, FileCheck, DollarSign } from "lucide-react";
+import { FileText, CheckCircle, FileCheck, DollarSign, Shield, Lock, Building2 } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useState } from "react";
 
 const steps = [
   {
@@ -30,6 +32,8 @@ const steps = [
 ];
 
 const HowItWorks = () => {
+  const [consentChecked, setConsentChecked] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -84,6 +88,83 @@ const HowItWorks = () => {
                   <span>Dedicated support team available to answer your questions</span>
                 </li>
               </ul>
+            </div>
+
+            {/* Bank Authentication Trust Section */}
+            <div className="mt-16 p-8 border-2 border-trust-primary bg-card">
+              <div className="flex items-center gap-3 mb-6">
+                <Shield className="w-8 h-8 text-trust-primary" />
+                <h3 className="text-3xl font-mono font-bold">Bank Authentication</h3>
+              </div>
+              
+              <div className="space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  In accordance with Federal Deposit Insurance Corporation (FDIC) guidelines and the Gramm-Leach-Bliley Act (GLBA), 
+                  we utilize secure bank authentication protocols to verify your identity and financial information. By proceeding, 
+                  you authorize Trust Lending Funds to access your banking data through encrypted channels for the sole purpose of 
+                  loan application verification and creditworthiness assessment. Your data is protected under 256-bit SSL encryption 
+                  and is never shared with third parties without your explicit consent.
+                </p>
+
+                <div className="flex items-start gap-3 p-4 bg-muted/50 border border-border rounded-lg">
+                  <Checkbox 
+                    id="consent" 
+                    checked={consentChecked}
+                    onCheckedChange={(checked) => setConsentChecked(checked as boolean)}
+                    className="mt-1"
+                  />
+                  <label htmlFor="consent" className="text-sm leading-relaxed cursor-pointer">
+                    I agree to the terms and authorize verification of my banking information in accordance with applicable 
+                    federal regulations including the Fair Credit Reporting Act (FCRA) and consent to the electronic disclosure 
+                    of my financial data for loan processing purposes.
+                  </label>
+                </div>
+
+                {/* Bank Logos */}
+                <div className="pt-6 border-t border-border">
+                  <p className="text-sm text-muted-foreground mb-4 text-center">Trusted Banking Partners</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-items-center">
+                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-trust-primary transition-colors w-full">
+                      <Building2 className="w-12 h-12 text-muted-foreground" />
+                      <span className="text-xs font-mono font-semibold">CHASE</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-trust-primary transition-colors w-full">
+                      <Building2 className="w-12 h-12 text-muted-foreground" />
+                      <span className="text-xs font-mono font-semibold">Bank of America</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-trust-primary transition-colors w-full">
+                      <Building2 className="w-12 h-12 text-muted-foreground" />
+                      <span className="text-xs font-mono font-semibold">Navy Federal</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 p-4 border border-border rounded-lg bg-background/50 hover:border-trust-primary transition-colors w-full">
+                      <Building2 className="w-12 h-12 text-muted-foreground" />
+                      <span className="text-xs font-mono font-semibold">Regions</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Trust Badges */}
+                <div className="pt-6 border-t border-border">
+                  <div className="flex flex-wrap justify-center gap-8 items-center">
+                    <div className="flex items-center gap-2 text-trust-primary">
+                      <Lock className="w-6 h-6" />
+                      <span className="text-sm font-semibold">256-bit SSL</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-trust-primary">
+                      <Shield className="w-6 h-6" />
+                      <span className="text-sm font-semibold">Secure Site</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-trust-primary">
+                      <CheckCircle className="w-6 h-6" />
+                      <span className="text-sm font-semibold">Data Encrypted</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-trust-primary">
+                      <Shield className="w-6 h-6" />
+                      <span className="text-sm font-semibold">FDIC Guidelines</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
