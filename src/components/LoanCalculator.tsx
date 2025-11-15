@@ -8,7 +8,7 @@ import { Calculator } from "lucide-react";
 const LoanCalculator = () => {
   const [loanAmount, setLoanAmount] = useState(10000);
   const [loanTerm, setLoanTerm] = useState(12);
-  const interestRate = 8.5; // Fixed interest rate for demo
+  const [interestRate, setInterestRate] = useState(8.5);
 
   const calculateMonthlyPayment = () => {
     const monthlyRate = interestRate / 100 / 12;
@@ -77,13 +77,21 @@ const LoanCalculator = () => {
               </div>
 
               <div>
-                <Label className="text-base">Interest Rate (APR)</Label>
-                <Input
-                  type="text"
-                  value={`${interestRate}%`}
-                  disabled
-                  className="mt-2"
+                <Label className="text-base mb-4 block">
+                  Interest Rate (APR): <span className="font-bold text-accent">{interestRate.toFixed(2)}%</span>
+                </Label>
+                <Slider
+                  value={[interestRate]}
+                  onValueChange={(value) => setInterestRate(value[0])}
+                  min={3}
+                  max={25}
+                  step={0.5}
+                  className="mb-2"
                 />
+                <div className="flex justify-between text-xs text-muted-foreground">
+                  <span>3%</span>
+                  <span>25%</span>
+                </div>
               </div>
             </div>
 
