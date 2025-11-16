@@ -9,9 +9,9 @@ const Header = () => {
 
   return (
     <header className="border-b border-border bg-background sticky top-0 z-50">
-      <nav className="container mx-auto px-4 h-20 flex items-center justify-between gap-4">
+      <nav className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0">
-          <img src={trustLendingLogo} alt="Trust Lending Funds - Secure. Reliable. Funded." className="h-32 w-auto object-contain flex-shrink-0" />
+          <img src={trustLendingLogo} alt="Trust Lending Funds - Secure. Reliable. Funded." className="h-20 md:h-24 w-auto object-contain flex-shrink-0" />
         </Link>
         
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
