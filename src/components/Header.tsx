@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import trustLendingLogo from "@/assets/trust-lending-logo-full.jpg";
+import trustLendingLogo from "@/assets/trust-lending-logo-hd.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,7 +11,7 @@ const Header = () => {
     <header className="border-b border-border bg-background sticky top-0 z-50">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
         <Link to="/" className="flex items-center hover:opacity-80 transition-opacity flex-shrink-0">
-          <img src={trustLendingLogo} alt="Trust Lending Funds - Secure. Reliable. Funded." className="h-24 md:h-32 w-auto object-contain flex-shrink-0" />
+          <img src={trustLendingLogo} alt="Trust Lending Funds - Secure. Reliable. Funded." className="h-28 md:h-36 lg:h-40 w-auto object-contain flex-shrink-0" />
         </Link>
         
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
