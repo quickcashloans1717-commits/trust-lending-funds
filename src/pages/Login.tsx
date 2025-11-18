@@ -19,8 +19,8 @@ const Login = () => {
     // Simulate login
     setTimeout(() => {
       toast({
-        title: "Login functionality coming soon!",
-        description: "Authentication will be implemented in the next phase.",
+        title: "Login successful! (Simulated)",
+        description: "You have been logged in successfully.",
       });
       setIsLoading(false);
     }, 1000);
@@ -33,8 +33,8 @@ const Login = () => {
     // Simulate signup
     setTimeout(() => {
       toast({
-        title: "Signup functionality coming soon!",
-        description: "Authentication will be implemented in the next phase.",
+        title: "Account created! (Simulated)",
+        description: "Your account has been successfully created.",
       });
       setIsLoading(false);
     }, 1000);
@@ -52,30 +52,30 @@ const Login = () => {
 
             <Tabs defaultValue="login" className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-8">
-                <TabsTrigger value="login" className="font-mono">Login</TabsTrigger>
-                <TabsTrigger value="signup" className="font-mono">Sign Up</TabsTrigger>
+                <TabsTrigger value="login" className="font-bold">Login</TabsTrigger>
+                <TabsTrigger value="signup" className="font-bold">Sign Up</TabsTrigger>
               </TabsList>
 
               <TabsContent value="login">
                 <form onSubmit={handleLogin} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="login-email" className="font-mono">Email</Label>
+                    <Label htmlFor="login-email">Email</Label>
                     <Input 
                       id="login-email" 
                       type="email" 
                       required 
-                      className="border-2"
+                      className="border border-gray-300 rounded-md px-3 py-2"
                       placeholder="your.email@example.com"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="login-password" className="font-mono">Password</Label>
+                    <Label htmlFor="login-password">Password</Label>
                     <Input 
                       id="login-password" 
                       type="password" 
                       required 
-                      className="border-2"
+                      className="border border-gray-300 rounded-md px-3 py-2"
                       placeholder="••••••••"
                     />
                   </div>
@@ -93,7 +93,7 @@ const Login = () => {
                   <Button 
                     type="submit" 
                     disabled={isLoading}
-                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-mono"
+                    className="w-full bg-green-600 text-white font-bold py-2 rounded-md hover:bg-green-700"
                   >
                     {isLoading ? "Logging in..." : "Login"}
                   </Button>
@@ -104,52 +104,52 @@ const Login = () => {
                 <form onSubmit={handleSignup} className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="signup-firstname" className="font-mono">First Name</Label>
+                      <Label htmlFor="signup-firstname">First Name</Label>
                       <Input 
                         id="signup-firstname" 
                         required 
-                        className="border-2"
+                        className="border border-gray-300 rounded-md px-3 py-2"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="signup-lastname" className="font-mono">Last Name</Label>
+                      <Label htmlFor="signup-lastname">Last Name</Label>
                       <Input 
                         id="signup-lastname" 
                         required 
-                        className="border-2"
+                        className="border border-gray-300 rounded-md px-3 py-2"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-email" className="font-mono">Email</Label>
+                    <Label htmlFor="signup-email">Email</Label>
                     <Input 
                       id="signup-email" 
                       type="email" 
                       required 
-                      className="border-2"
+                      className="border border-gray-300 rounded-md px-3 py-2"
                       placeholder="your.email@example.com"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-password" className="font-mono">Password</Label>
+                    <Label htmlFor="signup-password">Password</Label>
                     <Input 
                       id="signup-password" 
                       type="password" 
                       required 
-                      className="border-2"
+                      className="border border-gray-300 rounded-md px-3 py-2"
                       placeholder="••••••••"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="signup-confirm" className="font-mono">Confirm Password</Label>
+                    <Label htmlFor="signup-confirm">Confirm Password</Label>
                     <Input 
                       id="signup-confirm" 
                       type="password" 
                       required 
-                      className="border-2"
+                      className="border border-gray-300 rounded-md px-3 py-2"
                       placeholder="••••••••"
                     />
                   </div>
@@ -164,7 +164,7 @@ const Login = () => {
                   <Button 
                     type="submit" 
                     disabled={isLoading}
-                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-mono"
+                    className="w-full bg-green-600 text-white font-bold py-2 rounded-md hover:bg-green-700"
                   >
                     {isLoading ? "Creating account..." : "Create Account"}
                   </Button>
