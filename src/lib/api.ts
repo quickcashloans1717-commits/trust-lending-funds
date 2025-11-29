@@ -14,9 +14,7 @@ const handleResponse = async (response: Response) => {
 };
 
 export const submitLoanApplication = async (payload: Record<string, unknown>) => {
-  if (!API_BASE_URL) {
-    throw new Error("API base URL is not configured. Set VITE_API_URL in your environment.");
-  }
+  // API_BASE_URL can be empty for relative paths (Vercel)
 
   const response = await fetch(`${API_BASE_URL}/api/loan-application`, {
     method: "POST",
