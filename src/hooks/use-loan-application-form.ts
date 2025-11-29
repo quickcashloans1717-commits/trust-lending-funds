@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 export type LoanApplicationData = {
+  loanType: string;
+  loanTitle: string;
   loanAmount: string;
   loanDuration: string;
   loanPurpose: string;
@@ -39,6 +41,8 @@ type UseLoanApplicationFormReturn = {
 const STORAGE_KEY = "loan-application-form";
 
 const defaultData: LoanApplicationData = {
+  loanType: "",
+  loanTitle: "",
   loanAmount: "",
   loanDuration: "",
   loanPurpose: "",
