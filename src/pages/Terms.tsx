@@ -91,8 +91,8 @@ const Terms = () => {
                 <p>
                   For questions regarding these terms, please contact us at:<br />
                   Email: legal@quickcashloans.com<br />
-                  Phone: +1 (415) 326-6098<br />
-                  Address: 595 Market Street, Suite 200, San Francisco, CA 94105
+                  Phone: +1 (415)-493-7014<br />
+                  Address: 170 Boll St, Dallas, TX, 75204, USA
                 </p>
               </section>
             </div>
